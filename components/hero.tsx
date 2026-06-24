@@ -146,7 +146,7 @@ export default function Hero() {
               src="/danish-photo.jpeg"
               alt="Muhammad Danish Shafique"
               fill
-              className="object-cover scale-[1.05]"
+              className="object-cover object-top scale-[1.05]"
               priority
             />
           </div>

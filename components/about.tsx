@@ -23,7 +23,7 @@ export default function About() {
                   alt="Muhammad Danish Shafique"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   priority
                 />
               </div>
