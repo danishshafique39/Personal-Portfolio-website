@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Mail, Phone, MapPin, Linkedin, Send } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
 import { Reveal, RevealItem } from "@/components/reveal"
+import MagneticButton from "@/components/magnetic-button"
 
 export default function Contact() {
   const { toast } = useToast()
@@ -70,7 +71,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900 border-t border-slate-200/30 dark:border-slate-800/30"
+      className="py-16 sm:py-20 md:py-24 bg-transparent border-t border-slate-200/30 dark:border-slate-800/30"
     >
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
         
@@ -211,23 +212,25 @@ export default function Contact() {
                 />
               </div>
 
-              <Button 
-                type="submit" 
-                className="w-full relative overflow-hidden group bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-semibold shadow-md shadow-emerald-500/10 hover:shadow-emerald-500/20 hover:scale-[1.01] transition-all duration-300 h-11"
-                disabled={isSubmitting}
-              >
-                <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <span className="flex items-center justify-center gap-1.5">
-                  {isSubmitting ? (
-                    "Sending..."
-                  ) : (
-                    <>
-                      Send Message
-                      <Send className="h-3.5 w-3.5" />
-                    </>
-                  )}
-                </span>
-              </Button>
+              <MagneticButton className="w-full">
+                <Button 
+                  type="submit" 
+                  className="w-full relative overflow-hidden group bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-semibold shadow-md shadow-emerald-500/10 hover:shadow-emerald-500/20 hover:scale-[1.01] transition-all duration-300 h-11"
+                  disabled={isSubmitting}
+                >
+                  <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <span className="flex items-center justify-center gap-1.5">
+                    {isSubmitting ? (
+                      "Sending..."
+                    ) : (
+                      <>
+                        Send Message
+                        <Send className="h-3.5 w-3.5" />
+                      </>
+                    )}
+                  </span>
+                </Button>
+              </MagneticButton>
             </form>
           </RevealItem>
 

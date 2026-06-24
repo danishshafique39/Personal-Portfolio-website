@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Reveal } from "@/components/reveal"
 import { useReducedMotion } from "framer-motion"
+import MagneticButton from "@/components/magnetic-button"
 
 interface Testimonial {
   id: number
@@ -110,7 +111,7 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-slate-100 to-slate-50 dark:from-slate-900 dark:to-slate-950 border-t border-slate-200/30 dark:border-slate-800/30"
+      className="py-16 sm:py-20 md:py-24 bg-transparent border-t border-slate-200/30 dark:border-slate-800/30"
     >
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
         
@@ -183,20 +184,24 @@ export default function Testimonials() {
           </div>
 
           {/* Carousel Arrows */}
-          <button
-            onClick={scrollPrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full border border-slate-200/80 dark:border-slate-800/80 bg-white/80 dark:bg-slate-900/80 text-slate-700 dark:text-slate-300 flex items-center justify-center shadow-md hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors z-20"
-            aria-label="Previous slide"
-          >
-            <ChevronLeft className="h-5 w-5" />
-          </button>
-          <button
-            onClick={scrollNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full border border-slate-200/80 dark:border-slate-800/80 bg-white/80 dark:bg-slate-900/80 text-slate-700 dark:text-slate-300 flex items-center justify-center shadow-md hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors z-20"
-            aria-label="Next slide"
-          >
-            <ChevronRight className="h-5 w-5" />
-          </button>
+          <MagneticButton className="absolute left-0 top-1/2 -translate-y-1/2 z-20">
+            <button
+              onClick={scrollPrev}
+              className="w-10 h-10 rounded-full border border-slate-200/80 dark:border-slate-800/80 bg-white/80 dark:bg-slate-900/80 text-slate-700 dark:text-slate-300 flex items-center justify-center shadow-md hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+          </MagneticButton>
+          <MagneticButton className="absolute right-0 top-1/2 -translate-y-1/2 z-20">
+            <button
+              onClick={scrollNext}
+              className="w-10 h-10 rounded-full border border-slate-200/80 dark:border-slate-800/80 bg-white/80 dark:bg-slate-900/80 text-slate-700 dark:text-slate-300 flex items-center justify-center shadow-md hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+              aria-label="Next slide"
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
+          </MagneticButton>
         </div>
 
         {/* Carousel Pagination Dots */}
@@ -224,13 +229,15 @@ export default function Testimonials() {
             <div className="font-bold text-slate-950 dark:text-white text-sm">5.0 Rating on Fiverr</div>
             <div className="text-xs text-slate-500">Based on 50+ client contracts completed</div>
           </div>
-          <Button asChild size="sm" className="relative overflow-hidden group bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold shrink-0 ml-auto h-9">
-            <Link href="https://www.fiverr.com/s/38q3wjL" target="_blank" rel="noopener noreferrer">
-              <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <ExternalLink className="mr-1.5 h-3.5 w-3.5" />
-              Visit Gig
-            </Link>
-          </Button>
+          <MagneticButton className="shrink-0 ml-auto">
+            <Button asChild size="sm" className="relative overflow-hidden group bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-semibold h-9 w-full sm:w-auto">
+              <Link href="https://www.fiverr.com/s/38q3wjL" target="_blank" rel="noopener noreferrer">
+                <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <ExternalLink className="mr-1.5 h-3.5 w-3.5" />
+                Visit Gig
+              </Link>
+            </Button>
+          </MagneticButton>
         </div>
 
       </div>

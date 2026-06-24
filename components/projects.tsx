@@ -228,7 +228,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="py-16 sm:py-20 md:py-24 bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900 border-t border-slate-200/30 dark:border-slate-800/30"
+      className="py-16 sm:py-20 md:py-24 bg-transparent border-t border-slate-200/30 dark:border-slate-800/30"
     >
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
         <Reveal className="text-center mb-12 md:mb-16">

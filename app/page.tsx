@@ -6,10 +6,12 @@ import Experience from "@/components/experience"
 import Testimonials from "@/components/testimonials"
 import Contact from "@/components/contact"
 import Footer from "@/components/footer"
+import ParticlesBackground from "@/components/particles"
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen relative">
+      <ParticlesBackground />
       <Hero />
       <About />
       <Projects />

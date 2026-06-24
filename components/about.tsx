@@ -5,10 +5,11 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Reveal, RevealItem } from "@/components/reveal"
 import { Award, Code, BookOpen } from "lucide-react"
+import MagneticButton from "@/components/magnetic-button"
 
 export default function About() {
   return (
-    <section id="about" className="py-16 sm:py-20 md:py-24 bg-slate-50 dark:bg-slate-950 border-t border-slate-200/30 dark:border-slate-800/30">
+    <section id="about" className="relative py-16 sm:py-20 md:py-24 bg-slate-50/40 dark:bg-slate-950/40 border-t border-slate-200/30 dark:border-slate-800/30 backdrop-blur-[2px]">
       <div className="container px-4 sm:px-6 lg:px-8 mx-auto">
         <Reveal stagger={0.15} className="flex flex-col md:flex-row items-center gap-8 md:gap-12 lg:gap-16">
           {/* Left Side: Avatar / Photo with Glowing accents */}
@@ -71,16 +72,18 @@ export default function About() {
             </div>
 
             <div className="pt-4 flex flex-col sm:flex-row gap-4">
-              <Button asChild className="relative overflow-hidden group bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-semibold shadow-md shadow-emerald-500/10 hover:shadow-emerald-500/20 transition-all duration-300 w-full sm:w-auto h-11 px-6">
-                <Link
-                  href="https://drive.google.com/file/d/1muPFqy-ccmUc1Wj_vZNTEmR_i6PanpF8/view?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  Download Resume
-                </Link>
-              </Button>
+              <MagneticButton>
+                <Button asChild className="relative overflow-hidden group bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-semibold shadow-md shadow-emerald-500/10 hover:shadow-emerald-500/20 transition-all duration-300 w-full sm:w-auto h-11 px-6">
+                  <Link
+                    href="https://drive.google.com/file/d/1muPFqy-ccmUc1Wj_vZNTEmR_i6PanpF8/view?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    Download Resume
+                  </Link>
+                </Button>
+              </MagneticButton>
             </div>
           </RevealItem>
         </Reveal>

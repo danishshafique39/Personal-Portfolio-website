@@ -1,46 +1,11 @@
 'use client'
 
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState, useEffect } from "react"
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
-
-function MagneticButton({ children }: { children: React.ReactNode }) {
-  const ref = useRef<HTMLDivElement>(null)
-  const [position, setPosition] = useState({ x: 0, y: 0 })
-  const shouldReduceMotion = useReducedMotion()
-
-  if (shouldReduceMotion) {
-    return <div className="w-full sm:w-auto">{children}</div>
-  }
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!ref.current) return
-    const { clientX, clientY } = e
-    const { left, top, width, height } = ref.current.getBoundingClientRect()
-    const x = clientX - (left + width / 2)
-    const y = clientY - (top + height / 2)
-    setPosition({ x: x * 0.25, y: y * 0.25 })
-  }
-
-  const handleMouseLeave = () => {
-    setPosition({ x: 0, y: 0 })
-  }
-
-  return (
-    <motion.div
-      ref={ref}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      animate={{ x: position.x, y: position.y }}
-      transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
-      className="w-full sm:w-auto"
-    >
-      {children}
-    </motion.div>
-  )
-}
+import MagneticButton from "@/components/magnetic-button"
 
 export default function Hero() {
   const roles = ["Full-Stack Developer", "Mobile App Developer", "AI & Automation"]
@@ -84,10 +49,10 @@ export default function Hero() {
   return (
     <section 
       id="hero" 
-      className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 md:px-6 overflow-hidden bg-slate-950"
+      className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 md:px-6 overflow-hidden bg-transparent"
     >
       {/* 1. Aurora / Gradient mesh background */}
-      <div className="absolute inset-0 -z-10 bg-slate-950 overflow-hidden">
+      <div className="absolute inset-0 -z-10 bg-transparent overflow-hidden">
         {/* Blob 1 - Emerald */}
         <motion.div
           animate={shouldReduceMotion ? {} : {
