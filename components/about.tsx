@@ -73,7 +73,7 @@ export default function About() {
             <div className="pt-4 flex flex-col sm:flex-row gap-4">
               <Button asChild className="relative overflow-hidden group bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-semibold shadow-md shadow-emerald-500/10 hover:shadow-emerald-500/20 transition-all duration-300 w-full sm:w-auto h-11 px-6">
                 <Link
-                  href="https://drive.google.com/file/d/1CvGTXUqpQ9nb_1eyfmZ1sAqt-tR2zeJE/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1muPFqy-ccmUc1Wj_vZNTEmR_i6PanpF8/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
